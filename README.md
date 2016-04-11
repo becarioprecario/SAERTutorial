@@ -1,17 +1,22 @@
-## Tutorial Title
-
-## Small Area Estimation with R
+## Tutorial 'Small Area Estimation with R'
 
 ### Virgilio Gómez Rubio (Universidad de Castilla-La Mancha, Spain)
 
 
 ## Background
 
-[Small Area Estimation](https://en.wikipedia.org/wiki/Small_area_estimation) is an important topic that has not been widely covered in
-previous useR! conferences. Furthermore, there is a shortage of training
-materials on Small Area Estimation with R.  This tutorial aims at providing an
-updated version of the tutorial presented at useR! 2008 by including new R
-packages in the 'Official Statistics and Survey Methodology' Task View.
+[Small Area Estimation](https://en.wikipedia.org/wiki/Small_area_estimation)
+deals with the problem of providing estimates of some parameters of interest
+for sub-populations. These techniques are often required when data from a
+larger survey are available but parameter estimates are required at a smaller
+level.  Typical problems include the estimation of income per household or
+unemployment in sub-populations from survey data.
+
+This is an important topic that has not been widely covered in previous useR!
+conferences. Furthermore, there is a shortage of training materials on Small
+Area Estimation with R.  This tutorial aims at providing an updated version of
+the tutorial presented at useR! 2008 by including new R packages in the
+'Official Statistics and Survey Methodology' Task View.
 
 
 ## Tutorial Overview
