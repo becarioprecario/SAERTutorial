@@ -5,7 +5,7 @@
 ### Virgilio Gómez Rubio (Universidad de Castilla-La Mancha, Spain)
 
 
-## Background:
+## Background
 
 [Small Area Estimation](https://en.wikipedia.org/wiki/Small_area_estimation) is an important topic that has not been widely covered in
 previous useR! conferences. Furthermore, there is a shortage of training
