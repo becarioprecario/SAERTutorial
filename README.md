@@ -34,6 +34,8 @@ This tutorial will be roughly based on the [tutorial presented at useR! 2008](ht
 but will include updated materials. In particular, it will cover new R packages
 that have appeared since then.
 
+All tutorial materials will be available from a [Github repository](https://github.com/becarioprecario/SAERTutorial).
+
 ## Detailed Outline
 
 The tutorial will use some case studies to present the main statistical
