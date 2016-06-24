@@ -77,7 +77,11 @@ You can download from [here](http://www.mrc-bsu.cam.ac.uk/software/bugs/) (read 
 
 ###INLA
 
-R-INLA is also required for some of the models. You can download it from [here](http://www.r-inla.org/download).
+R-INLA is also required for some of the models. You can download it from [here](http://www.r-inla.org/download). You can also install it by running the following:
+
+```R
+install.packages("INLA", repos="https://www.math.ntnu.no/inla/R/stable")
+```
 
 ###SAE2 package
 
