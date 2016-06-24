@@ -67,4 +67,14 @@ offices for statistics, universities and research institutions working
 on Small Area Estimation.
 
 
+##Other software
 
+###WinBUGS
+
+WinBUGS is required to run some of the models presented in the tutorial.
+You can download from [here](http://www.mrc-bsu.cam.ac.uk/software/bugs/) (read very carefully the instructions to install it).
+
+
+###INLA
+
+R-INLA is also required for some of the models. You can download it from [here](http://www.r-inla.org/download).
