@@ -71,7 +71,7 @@ on Small Area Estimation.
 
 ### R packages
 
-You can install the required R packages by running file 'install.R'.
+You can install the required R packages by running file `install.R`.
 
 ###WinBUGS
 
