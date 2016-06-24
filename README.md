@@ -78,3 +78,13 @@ You can download from [here](http://www.mrc-bsu.cam.ac.uk/software/bugs/) (read 
 ###INLA
 
 R-INLA is also required for some of the models. You can download it from [here](http://www.r-inla.org/download).
+
+###SAE2 package
+
+The SAE2 package contains some functions to fit some of the models in the tutorial. You can install it from [github](https://github.com/becarioprecario/SAE2):
+
+```R
+devtools::install_github("becarioprecario/SAE2")
+```
+
+
