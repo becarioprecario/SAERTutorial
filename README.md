@@ -67,7 +67,11 @@ offices for statistics, universities and research institutions working
 on Small Area Estimation.
 
 
-##Other software
+##Required  software
+
+### R packages
+
+You can install the required R packages by running file 'install.R'.
 
 ###WinBUGS
 
