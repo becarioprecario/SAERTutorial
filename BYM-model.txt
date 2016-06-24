@@ -1,0 +1,22 @@
+model
+{
+
+  for(i in 1:N)
+  {
+     observed[i] ~ dpois(mu[i])
+     log(theta[i]) <-  alpha + beta*nonwhite[i] + u[i] + v[i] 
+     mu[i] <- expected[i]*theta[i]
+
+     u[i] ~ dnorm(0, precu)
+  }
+
+  v[1:N] ~ car.normal(adj[], weights[], num[], precv)
+
+  alpha ~ dflat()
+  beta ~ dnorm(0,1.0E-5)
+  precu ~ dgamma(0.001, 0.001)
+  precv ~ dgamma(0.1, 0.1)
+
+  sigmau<-1/precu
+  sigmav<-1/precv
+}
