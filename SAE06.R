@@ -44,7 +44,7 @@ bymmodelfile<-paste(getwd(), "/BYM-model.txt", sep="")
 wdir<-paste(getwd(), "/BYM", sep="")
 if(!file.exists(wdir)){dir.create(wdir)}
 
-BugsDir <- "/Users/virgiliogomezgislab/.wine/dosdevices/c:/Program Files/WinBUGS14"
+BugsDir <- "/Users/virgil/.wine/dosdevices/c:/Program Files/WinBUGS14"
 MCMCres<- bugs(data=d, inits=list(inits),
    working.directory=wdir,
    parameters.to.save=c("theta", "alpha", "beta", "u", "v", "sigmau", "sigmav"),
@@ -131,7 +131,7 @@ print(spplot(nc, c("SMR", "BYMmean"), at=brks, col.regions=cols,
 
 
 ###################################################
-### code chunk number 7: SAE06.Rnw:361-380 (eval = FALSE)
+### code chunk number 7: SAE06.Rnw:362-381 (eval = FALSE)
 ###################################################
 ## dunemp<-source("Unemployment/WBdata/datasp.txt")$value
 ## dsp<-source("Unemployment/WBdata/spdata.txt")$value
@@ -143,7 +143,7 @@ print(spplot(nc, c("SMR", "BYMmean"), at=brks, col.regions=cols,
 ## wdir<-paste(getwd(), "/BYM-Unemp", sep="")
 ## if(!file.exists(wdir)){dir.create(wdir)}
 ## 
-## BugsDir <- "/Users/virgiliogomezgislab/.wine/dosdevices/c:/Program Files/WinBUGS14"
+## #BugsDir <- "/Users/virgiliogomezgislab/.wine/dosdevices/c:/Program Files/WinBUGS14"
 ## MCMCresunemp<- bugs(data=c(dunemp, dsp), inits=list(initsunemp1, initsunemp2),
 ##    working.directory=wdir,
 ##    parameters.to.save=c("p", "alpha", "bage", "bsex", "beduc"),
@@ -155,7 +155,7 @@ print(spplot(nc, c("SMR", "BYMmean"), at=brks, col.regions=cols,
 
 
 ###################################################
-### code chunk number 8: SAE06.Rnw:383-384
+### code chunk number 8: SAE06.Rnw:384-385
 ###################################################
 load("MCMCresunemp.RData")
 
@@ -174,7 +174,7 @@ print(spplot(Sweden, "unemp", cuts=20))
 
 
 ###################################################
-### code chunk number 10: SAE06.Rnw:408-409 (eval = FALSE)
+### code chunk number 10: SAE06.Rnw:409-410 (eval = FALSE)
 ###################################################
 ## library(maptools)
 ## Sweden<-readShapePoly(fn="Sweden_municipality")

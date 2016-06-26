@@ -86,7 +86,7 @@ synthmiss2<-predict(glsmiss2, REGCOV, interval="confidence")
 ###################################################
 ### code chunk number 9: SAE03.Rnw:492-498
 ###################################################
-gammaw1<- 1- (destdom$se.RMT85^2)/((synth1- destdom$statistics.RMT85)^2)
+gammaw1<- 1- (destdom$se^2)/((synth1 - destdom$RMT85)^2)
 gammaw1
 gammaw1[gammaw1<0]<-0
 gammaw1[gammaw1>1]<-1
@@ -97,7 +97,7 @@ comp1
 ###################################################
 ### code chunk number 10: SAE03.Rnw:506-510
 ###################################################
-gammaw2<- 1- sum(destdom$se.RMT85^2)/sum((synth2- destdom$statistics.RMT85)^2)
+gammaw2<- 1- sum(destdom$se^2)/sum((synth2- destdom$RMT85)^2)
 gammaw2
 comp2<-gammaw2*destdom[,2]+(1-gammaw2)*synth2
 comp2

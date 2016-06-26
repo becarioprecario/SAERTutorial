@@ -2,13 +2,13 @@
 ### Encoding: ISO8859-1
 
 ###################################################
-### code chunk number 1: SAE04.Rnw:261-262
+### code chunk number 1: SAE04.Rnw:263-264
 ###################################################
 load(file="SAE03.RData")
 
 
 ###################################################
-### code chunk number 2: SAE04.Rnw:266-272
+### code chunk number 2: SAE04.Rnw:268-274
 ###################################################
 library(SAE2)
 spam.options(eps=.0000001)
@@ -19,7 +19,7 @@ dmmeblup<-EBLUP(DIREST~ME84, ~DESVAR, data=dmm )
 
 
 ###################################################
-### code chunk number 3: SAE04.Rnw:276-277
+### code chunk number 3: SAE04.Rnw:278-279
 ###################################################
 dmmeblup
 
@@ -34,7 +34,7 @@ unitmm<-predict(mm, dmm)
 
 
 ###################################################
-### code chunk number 5: SAE04.Rnw:319-322
+### code chunk number 5: SAE04.Rnw:321-324
 ###################################################
 plot(RMT85REG, unitmm)
 abline(0,1)
@@ -45,7 +45,7 @@ unitmm<-predict(mm, dmm)
 
 
 ###################################################
-### code chunk number 6: SAE04.Rnw:327-328 (eval = FALSE)
+### code chunk number 6: SAE04.Rnw:329-330 (eval = FALSE)
 ###################################################
 ## library(nlme)
 ## 
@@ -54,7 +54,7 @@ unitmm<-predict(mm, dmm)
 
 
 ###################################################
-### code chunk number 7: SAE04.Rnw:330-331
+### code chunk number 7: SAE04.Rnw:332-333
 ###################################################
 mm
 
@@ -68,7 +68,7 @@ unitmmmiss[is.na(unitmmmiss)]<-predict(mmmiss, dmm, level=0)[is.na(unitmmmiss)]
 
 
 ###################################################
-### code chunk number 9: SAE04.Rnw:368-371
+### code chunk number 9: SAE04.Rnw:370-373
 ###################################################
 plot(RMT85REG, unitmmmiss)
 abline(0,1)
@@ -78,7 +78,7 @@ unitmmmiss[is.na(unitmmmiss)]<-predict(mmmiss, dmm, level=0)[is.na(unitmmmiss)]
 
 
 ###################################################
-### code chunk number 10: SAE04.Rnw:376-377 (eval = FALSE)
+### code chunk number 10: SAE04.Rnw:378-379 (eval = FALSE)
 ###################################################
 ## mmmiss<-lme(RMT85~ME84, random=~1|REG, data=dsmpcl2)
 ## unitmmmiss<-predict(mmmiss, dmm)
@@ -86,13 +86,13 @@ unitmmmiss[is.na(unitmmmiss)]<-predict(mmmiss, dmm, level=0)[is.na(unitmmmiss)]
 
 
 ###################################################
-### code chunk number 11: SAE04.Rnw:379-380
+### code chunk number 11: SAE04.Rnw:381-382
 ###################################################
 mmmiss
 
 
 ###################################################
-### code chunk number 12: SAE04.Rnw:464-468
+### code chunk number 12: SAE04.Rnw:466-470
 ###################################################
 library(spdep)
 regnb<-poly2nb(swreg)
@@ -101,7 +101,7 @@ W<-nb2mat(regnb, style="W")
 
 
 ###################################################
-### code chunk number 13: SAE04.Rnw:471-473
+### code chunk number 13: SAE04.Rnw:473-475
 ###################################################
 dmmseblup<-SEBLUP(DIREST~ME84, ~DESVAR, data=dmm , W=W, method="REML")
 dmmseblup
