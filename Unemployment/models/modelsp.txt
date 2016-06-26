@@ -1,0 +1,36 @@
+model
+{
+	for(i in 1:totssize)
+	{
+
+		emp[i]~dbern(p[i])
+
+	logit(pp[i])<-alpha+bage*AGE[area[i]]+bsex*SEX[area[i]]+beduc*EDUC[area[i]]+u[area[i]]+v[area[i]]
+
+	p[i]<-max(0.000000001, min(pp[i], 0.999999999))
+
+		
+	}
+
+	for(i in 1:N)
+	{
+		u[i] ~ dnorm(0, precu)
+	
+		logit(rateemp[i])<-alpha+bage*AGE[i]+bsex*SEX[i]+beduc*EDUC[i]+u[i]+v[i]
+		rateunemp[i]<- 1-rateemp[i]
+	}
+
+	v[1:N] ~ car.normal(adj[], weights[], num[], precv)
+
+	precu ~ dgamma (a0,b0)
+	precv ~ dgamma (a1,b1)
+
+	alpha ~ dflat()
+        bage ~ dflat()
+        bsex ~ dflat()
+        beduc ~ dflat()
+
+	sigmau<-1/precu
+	sigmav<-1/precv
+}
+
