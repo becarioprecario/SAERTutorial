@@ -49,22 +49,22 @@ load("IncomeMCMC.RData")
 ###################################################
 ### code chunk number 4: SAE05.Rnw:395-412 (eval = FALSE)
 ###################################################
-## unitmodel<-paste(getwd(), "/Income/models/unit_model.txt", sep="")
-## dataunit<-source("Income/WBdata/unit_data.txt")$value
-## initsunit1<-source("Income/unit_inits/inits-1.txt")$value
-## initsunit2<-source("Income/unit_inits/inits-2.txt")$value
+## unitmodel <- paste(getwd(), "/Income/models/unit_model.txt", sep = "")
+## dataunit <- source("Income/WBdata/unit_data.txt")$value
+## initsunit1 <- source("Income/unit_inits/inits-1.txt")$value
+## initsunit2 <- source("Income/unit_inits/inits-2.txt")$value
 ## 
-## wdir<-paste(getwd(), "/Income_unit", sep="")
+## wdir <- paste(getwd(), "/Income_unit", sep = "")
 ## if(!file.exists(wdir)){dir.create(wdir)}
 ## 
 ## BugsDir <- "/home/asdar/.wine/dosdevices/c:/Program Files/WinBUGS14"
-## unitres<- bugs(data=dataunit, inits=list(initsunit1, initsunit2),
-##    working.directory=wdir,
-##    parameters.to.save=c("mug", "sigmau", "u", "alpha", "bedterhh", "sigmae"),
-##    n.chains=2, n.iter=3000, n.burnin=2000, n.thin=1,
-##    model.file=unitmodel,
-##    bugs.directory=BugsDir,
-##    WINEPATH="/usr/bin/winepath")
+## unitres <- bugs(data = dataunit, inits = list(initsunit1, initsunit2),
+##    working.directory = wdir,
+##    parameters.to.save = c("mug", "sigmau", "u", "alpha", "bedterhh", "sigmae"),
+##    n.chains = 2, n.iter = 3000, n.burnin = 2000, n.thin = 1,
+##    model.file = unitmodel,
+##    bugs.directory = BugsDir,
+##    WINEPATH = "/usr/local/bin/winepath")
 ## 
 
 
@@ -73,33 +73,37 @@ load("IncomeMCMC.RData")
 ###################################################
 ## library(coda)
 ## 
-## chain1<-read.coda("Income_area/coda1.txt", "Income_area/codaIndex.txt")
-## chain2<-read.coda("Income_area/coda2.txt", "Income_area/codaIndex.txt")
+## chain1<-read.coda("Income_area/coda1.txt",
+##   "Income_area/codaIndex.txt")
+## chain2<-read.coda("Income_area/coda2.txt",
+##   "Income_area/codaIndex.txt")
 ## chains<-mcmc.list(chain1, chain2)
 ## 
 ## plot(chains[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 6: SAE05.Rnw:434-435
+### code chunk number 6: SAE05.Rnw:436-437
 ###################################################
 plot(chains[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 7: SAE05.Rnw:447-448 (eval = FALSE)
+### code chunk number 7: SAE05.Rnw:449-450 (eval = FALSE)
 ###################################################
 ## library(coda)
 ## 
-## chain1<-read.coda("Income_area/coda1.txt", "Income_area/codaIndex.txt")
-## chain2<-read.coda("Income_area/coda2.txt", "Income_area/codaIndex.txt")
+## chain1<-read.coda("Income_area/coda1.txt",
+##   "Income_area/codaIndex.txt")
+## chain2<-read.coda("Income_area/coda2.txt",
+##   "Income_area/codaIndex.txt")
 ## chains<-mcmc.list(chain1, chain2)
 ## 
 ## plot(chains[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 8: SAE05.Rnw:494-498
+### code chunk number 8: SAE05.Rnw:496-500
 ###################################################
 library(R2WinBUGS)
 library(coda)
@@ -108,28 +112,29 @@ load("IncomeMCMCspatial.RData")
 
 
 ###################################################
-### code chunk number 9: SAE05.Rnw:507-527 (eval = FALSE)
+### code chunk number 9: SAE05.Rnw:509-530 (eval = FALSE)
 ###################################################
 ## library(R2WinBUGS)
 ## 
-## areamodelsp<-paste(getwd(), "/Income/models/area_modelsp.txt", sep="")
-## dataareasp<-source("Income/WBdata/area_datasp.txt")$value
-## neighbours<-source("Income/WBdata/spdata.txt")$value
-## initsareasp1<-source("Income/area_inits/initssp-1.txt")$value
-## initsareasp2<-source("Income/area_inits/initssp-2.txt")$value
+## areamodelsp <- paste(getwd(), "/Income/models/area_modelsp.txt", sep = "")
+## dataareasp <- source("Income/WBdata/area_datasp.txt")$value
+## neighbours <- source("Income/WBdata/spdata.txt")$value
+## initsareasp1 <- source("Income/area_inits/initssp-1.txt")$value
+## initsareasp2 <- source("Income/area_inits/initssp-2.txt")$value
 ## 
-## wdir<-paste(getwd(), "/Income_areasp", sep="")
+## wdir<-paste(getwd(), "/Income_areasp", sep = "")
 ## if(!file.exists(wdir)){dir.create(wdir)}
 ## 
-## BugsDir <- "/home/asdar/.wine/dosdevices/c:/Program Files/WinBUGS14"
-## arearessp<- bugs(data=c(dataareasp, neighbours), 
-##    inits=list(initsareasp1, initsareasp2),
-##    working.directory=wdir,
-##    parameters.to.save=c("mu","sigmau", "u", "sigmav", "v", "alpha", "bedterhh"),
-##    n.chains=2, n.iter=3000, n.burnin=2000, n.thin=1,
-##    model.file=areamodelsp,
-##    bugs.directory=BugsDir,
-##    WINEPATH="/usr/bin/winepath")
+## BugsDir <-
+##   "/home/asdar/.wine/dosdevices/c:/Program Files/WinBUGS14"
+## arearessp <- bugs(data = c(dataareasp, neighbours), 
+##    inits = list(initsareasp1, initsareasp2),
+##    working.directory = wdir,
+##    parameters.to.save = c("mu","sigmau", "u", "sigmav", "v", "alpha", "bedterhh"),
+##    n.chains = 2, n.iter = 3000, n.burnin = 2000, n.thin = 1,
+##    model.file = areamodelsp,
+##    bugs.directory = BugsDir,
+##    WINEPATH = "/usr/bin/winepath")
 
 
 ###################################################
@@ -137,33 +142,37 @@ load("IncomeMCMCspatial.RData")
 ###################################################
 ## library(coda)
 ## 
-## chainsp1<-read.coda("Income_areasp/coda1.txt", "Income_areasp/codaIndex.txt")
-## chainsp2<-read.coda("Income_areasp/coda2.txt", "Income_areasp/codaIndex.txt")
-## chainssp<-mcmc.list(chainsp1, chainsp2)
+## chainsp1 <- read.coda("Income_areasp/coda1.txt",
+##   "Income_areasp/codaIndex.txt")
+## chainsp2 <- read.coda("Income_areasp/coda2.txt",
+##   "Income_areasp/codaIndex.txt")
+## chainssp <- mcmc.list(chainsp1, chainsp2)
 ## 
 ## plot(chainssp[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 11: SAE05.Rnw:548-549
+### code chunk number 11: SAE05.Rnw:553-554
 ###################################################
 plot(chainssp[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 12: SAE05.Rnw:561-562 (eval = FALSE)
+### code chunk number 12: SAE05.Rnw:566-567 (eval = FALSE)
 ###################################################
 ## library(coda)
 ## 
-## chainsp1<-read.coda("Income_areasp/coda1.txt", "Income_areasp/codaIndex.txt")
-## chainsp2<-read.coda("Income_areasp/coda2.txt", "Income_areasp/codaIndex.txt")
-## chainssp<-mcmc.list(chainsp1, chainsp2)
+## chainsp1 <- read.coda("Income_areasp/coda1.txt",
+##   "Income_areasp/codaIndex.txt")
+## chainsp2 <- read.coda("Income_areasp/coda2.txt",
+##   "Income_areasp/codaIndex.txt")
+## chainssp <- mcmc.list(chainsp1, chainsp2)
 ## 
 ## plot(chainssp[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 13: SAE05.Rnw:606-610
+### code chunk number 13: SAE05.Rnw:611-615
 ###################################################
 library(R2WinBUGS)
 library(coda)
@@ -172,7 +181,7 @@ load("IncomeMCMCregional.RData")
 
 
 ###################################################
-### code chunk number 14: SAE05.Rnw:619-639 (eval = FALSE)
+### code chunk number 14: SAE05.Rnw:624-644 (eval = FALSE)
 ###################################################
 ## library(R2WinBUGS)
 ## 
@@ -201,33 +210,37 @@ load("IncomeMCMCregional.RData")
 ###################################################
 ## library(coda)
 ## 
-## chainreg1<-read.coda("Income_region/coda1.txt", "Income_region/codaIndex.txt")
-## chainreg2<-read.coda("Income_region/coda2.txt", "Income_region/codaIndex.txt")
+## chainreg1<-read.coda("Income_region/coda1.txt",
+##   "Income_region/codaIndex.txt")
+## chainreg2<-read.coda("Income_region/coda2.txt",
+##   "Income_region/codaIndex.txt")
 ## chainsreg<-mcmc.list(chainreg1, chainreg2)
 ## 
 ## plot(chainsreg[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 16: SAE05.Rnw:660-661
+### code chunk number 16: SAE05.Rnw:667-668
 ###################################################
 plot(chainssp[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 17: SAE05.Rnw:673-674 (eval = FALSE)
+### code chunk number 17: SAE05.Rnw:680-681 (eval = FALSE)
 ###################################################
 ## library(coda)
 ## 
-## chainreg1<-read.coda("Income_region/coda1.txt", "Income_region/codaIndex.txt")
-## chainreg2<-read.coda("Income_region/coda2.txt", "Income_region/codaIndex.txt")
+## chainreg1<-read.coda("Income_region/coda1.txt",
+##   "Income_region/codaIndex.txt")
+## chainreg2<-read.coda("Income_region/coda2.txt",
+##   "Income_region/codaIndex.txt")
 ## chainsreg<-mcmc.list(chainreg1, chainreg2)
 ## 
 ## plot(chainsreg[, c("deviance", "alpha", "mu[1]")])
 
 
 ###################################################
-### code chunk number 18: SAE05.Rnw:753-760
+### code chunk number 18: SAE05.Rnw:760-767
 ###################################################
 bayesres<-data.frame(AEMSE=c(NA, NA), 
   DIC=c(areares$DIC, arearessp$DIC))
