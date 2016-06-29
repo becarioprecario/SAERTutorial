@@ -2,7 +2,7 @@
 #Run this script to install the packages required in this tutorial
 #
 
-pkgs<-c("devtools", "coda", "gpclib",  
+pkgs<-c("devtools", "coda", "rgeos",  
    "maptools", "Matrix", "nlme", "lme4","R2WinBUGS", "RColorBrewer", "rgdal",
    "sampling", "sp", "SparseM", "spdep", "survey", "tripack"
 )
