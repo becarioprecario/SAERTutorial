@@ -1,11 +1,11 @@
 display(log)
-check(Z:/Users/virgil/Desktop/useR2016/saetutorial2008/BYM-model.txt)
+check(Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM-model.txt)
 model is syntactically correct
-data(Z:/Users/virgil/Desktop/useR2016/saetutorial2008/BYM/data.txt)
+data(Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/data.txt)
 data loaded
 compile(1)
 model compiled
-inits(1,Z:/Users/virgil/Desktop/useR2016/saetutorial2008/BYM/inits1.txt)
+inits(1,Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/inits1.txt)
 model is initialized
 gen.inits()
 command #Bugs:gen.inits cannot be executed (is greyed out)
@@ -21,7 +21,7 @@ set(sigmav)
 set(deviance)
 dic.set()
 update(1000)
-coda(*,Z:/Users/virgil/Desktop/useR2016/saetutorial2008/BYM/coda)
+coda(*,Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/coda)
 stats(*)
 
 Node statistics
@@ -336,9 +336,9 @@ Dbar = post.mean of -2logL; Dhat = -2LogL at post.mean of stochastic nodes
 	Dbar	Dhat	pD	DIC	
 observed	402.858	377.830	25.027	427.885	
 total	402.858	377.830	25.027	427.885	
-history(*,Z:/Users/virgil/Desktop/useR2016/saetutorial2008/BYM/history.odc)
+history(*,Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/history.odc)
 
 History
 
-save(Z:/Users/virgil/Desktop/useR2016/saetutorial2008/BYM/log.odc)
-save(Z:/Users/virgil/Desktop/useR2016/saetutorial2008/BYM/log.txt)
+save(Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/log.odc)
+save(Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/log.txt)
