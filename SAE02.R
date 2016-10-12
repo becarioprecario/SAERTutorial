@@ -125,15 +125,21 @@ legend(150, 800, c("SRSWOR", "CLSWOR", "CLSWOR2"), pch = rep(19, 3),
 
 
 ###################################################
-### code chunk number 10: SAE02.Rnw:486-489
+### code chunk number 10: SAE02.Rnw:486-495
 ###################################################
 library(survey)
 RMT85 <- mean(MU284$RMT85)
 RMT85REG <- as.numeric(by(MU284$RMT85, MU284$REG, mean))
 
+#       dest<-sum(dsmp$RMT85/(n/N))
+
+#       destcl<-sum(dsmpcl$RMT85/smpcl[[2]]$Prob)
+
+#       destcl2<-sum(dsmpcl2$RMT85/smpcl2[[2]]$Prob)
+
 
 ###################################################
-### code chunk number 11: SAE02.Rnw:501-505
+### code chunk number 11: SAE02.Rnw:507-511
 ###################################################
 
 svy <- svydesign(~ 1, data = dsmp, fpc = rep(284, n))
@@ -142,42 +148,45 @@ dest <- svymean(~ RMT85, svy, deff = TRUE)
 
 
 ###################################################
-### code chunk number 12: SAE02.Rnw:512-516
+### code chunk number 12: SAE02.Rnw:518-523
 ###################################################
 fpc <- lreg[dsmpcl$REG]
 
 svycl <- svydesign(id = ~ 1, strata = ~ REG, data = dsmpcl, fpc = fpc)
 destcl <- svymean(~ RMT85, svycl, deff = TRUE)
+#destclvar<-svyvar(~RMT85, svycl)
 
 
 ###################################################
-### code chunk number 13: SAE02.Rnw:523-527
+### code chunk number 13: SAE02.Rnw:530-536
 ###################################################
 fpc2 <- lreg[dsmpcl2$REG]
 svycl2 <- svydesign(id = ~ 1, strata = ~ REG, data = dsmpcl2, 
    fpc = fpc2)
 destcl2 <- svymean(~ RMT85, svycl2, deff = TRUE)
+#destcl2var<-svyvar(~RMT85, svycl2)
+
 
 
 ###################################################
-### code chunk number 14: SAE02.Rnw:545-549
+### code chunk number 14: SAE02.Rnw:554-558
 ###################################################
 #Estimation of domains
 destdom <- svyby( ~ RMT85,  ~ REG, svy, svymean)
-#destdomvar <- svyby(~ RMT85, ~ REG, svy, svyvar)
+#destdomvar<-svyby(~RMT85, ~REG, svy, svyvar)
 destdom
 
 
 ###################################################
-### code chunk number 15: SAE02.Rnw:566-569
+### code chunk number 15: SAE02.Rnw:575-578
 ###################################################
 destdomcl <- svyby(~ RMT85, ~ REG, svycl, svymean)
-#destdomclvar <- svyby( ~ RMT85, ~ REG, svycl, svyvar)
+#destdomclvar<-svyby(~RMT85, ~REG, svycl, svyvar)
 destdomcl
 
 
 ###################################################
-### code chunk number 16: SAE02.Rnw:588-591
+### code chunk number 16: SAE02.Rnw:597-600
 ###################################################
 destdomcl2 <- svyby(~ RMT85, ~ REG, svycl2, svymean)
 #destdomcl2var<-svyby(~RMT85, ~REG, svycl2, svyvar)
@@ -185,12 +194,12 @@ destdomcl2
 
 
 ###################################################
-### code chunk number 17: SAE02.Rnw:654-669
+### code chunk number 17: SAE02.Rnw:663-678
 ###################################################
 
 pop.totals = c(`(Intercept)` = N, ME84 = sum(MU284$ME84))
 
-svygreg <- calibrate(svy, ~ ME84, calfun = "linear",
+svygreg<-calibrate(svy, ~ ME84, calfun = "linear",
    population = pop.totals )
 svymean(~ RMT85, svygreg)
 
@@ -205,7 +214,7 @@ svymean(~ RMT85, svygregcl2)
 
 
 ###################################################
-### code chunk number 18: SAE02.Rnw:767-780
+### code chunk number 18: SAE02.Rnw:776-789
 ###################################################
 
 results <- data.frame(AEMSE = rep(NA, 3), DEFF = rep(NA, 3))
@@ -223,7 +232,7 @@ results
 
 
 ###################################################
-### code chunk number 19: SAE02.Rnw:786-795
+### code chunk number 19: SAE02.Rnw:795-804
 ###################################################
 plot(RMT85REG, destdom[,2], pch = 19, xlab = "True RMT85",
   ylab = "Estimated RMT85",
@@ -237,7 +246,7 @@ legend(400, 1000, c("SRSWOR", "CLSWOR", "CLSWOR2"), pch = rep(19, 3),
 
 
 ###################################################
-### code chunk number 20: SAE02.Rnw:806-807
+### code chunk number 20: SAE02.Rnw:815-816
 ###################################################
 save(file = "SAE02.RData", list = ls())
 
