@@ -1,17 +1,17 @@
-display(log)
+ke display(log)
 check(Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM-model.txt)
 model is syntactically correct
 data(Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/data.txt)
 data loaded
-compile(1)
+ccompile(1)
 model compiled
 inits(1,Z:/Volumes/externo/ssc2/trabajo/Congresos/useR2016/saetutorial2008/BYM/inits1.txt)
 model is initialized
-gen.inits()
+ogen.inits()
 command #Bugs:gen.inits cannot be executed (is greyed out)
 thin.updater(10)
 update(2000)
-set(theta)
+mset(theta)
 set(alpha)
 set(beta)
 set(u)
